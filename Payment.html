@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payement</title>
+    <link rel="stylesheet" href="./Payment.css" type="text/css">
+    <!-- The links of icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="manifest" href="./site.webmanifest">
+<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <h1>Buy Tickets</h1>
+        <h2>Payment details</h2>
+    </header>
+    <div class="sec" id="sec1">
+        <form id="form">
+        <label for="ctype">Card Type:</label><p>
+        <input type="radio" name="ctype" id="american">American Express <input type="radio" name="ctype" id="visa">Visa <input type="radio" name="ctype" id="master">Master</p>
+
+        <label for="cnum"> Card Number: </label>
+        <input type="text" name="cnum" id="cnum" class="required" required>
+        <br><br>
+        <label for="expdate">Expiry Date: </label>
+        <!-- <input type="date" name="expdate" id="expdate" required> -->
+        <div class="form-group" id="expiration-date">
+        <select id="expMonth" class="required">
+            <option value="January" selected>January</option>
+            <option value="February">February </option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+        <select id="expYear" class="required">
+            <option value="2023" selected> 2023</option>
+            <option value="2024"> 2024</option>
+            <option value="2025"> 2025</option>
+            <option value="2026"> 2026</option>
+            <option value="2027"> 2027</option>
+            <option value="2028"> 2028</option>
+            <option value="2029"> 2029</option>
+            <option value="2030"> 2030</option>
+            <option value="2031"> 2031</option>
+            <option value="2032"> 2032</option>
+            <option value="2033"> 2033</option>
+            <option value="2034"> 2034</option>
+        </select></div>
+        <br>
+        <label for="cvvnum">CVC / CVV :</label>
+        <input type="text" name="cvvnum" id="cvvnum" class="required" required>
+        <br><br>
+        <label for="cardname">Name on card:</label>
+        <input type="text" name="cardname" id="cardname">
+        <br><br>
+        </form>
+    </div>
+    <div id="sec2">
+        <h2>Summary</h2>
+        <form>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <td id="disdate"></td>
+                </tr>
+                <tr>
+                    <th>Time</th>
+                    <td id="timeT">7.00 am - 8.00 am</td>
+                </tr>
+                <tr>
+                    <th>Duration</th>
+                    <td id="duraT">1 hrs(01 Normal : 00 Peak)</td>
+                </tr>
+                <tr>
+                    <th>Tickets</th>
+                    <th>Charges($)</th>
+                </tr>
+                <tr id="rowSAT">
+                    <td id="SAT"> SriLankan Adult</td>
+                    <td id="calSAT">-</td>
+                </tr>
+                <tr id="rowSCT">
+                    <td id="SCT"> SriLankan Child</td>
+                    <td id="calSCT">-</td>
+                </tr>
+                <tr id="rowFAT">
+                    <td id="FAT">1 Foreign Adult</td>
+                    <td id="calFAT">$10</td>
+                </tr>
+                <tr id="rowFCT">
+                    <td id="FCT"> Foreign Child</td>
+                    <td id="calFCT">-</td>
+                </tr>
+                <tr id="rowIT">
+                    <td id="IT"> Infant</td>
+                    <td id="calIT">free</td>
+                </tr>
+                <tr>
+                    <th>Total Payable</th>
+                    <th id="Ttotal">$10</th>
+                </tr>
+               </table>
+        </form><br> <br>
+    </div>
+    <div id="sec3">
+        <br><br>
+        <form>
+        <a href="./Confirmation.html"><input type="button"id=paybtndis value="Pay $0.00" disabled></a> 
+     </form>
+    </div>
+    <div id="sec4">
+        <a href="./Details.html">Back</a>
+    </div>
+    <footer>
+
+    </footer>
+    <!-- link to the javascript -->
+    <script src="./Payment.js"></script> 
+</body>
+</html>

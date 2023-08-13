@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <link rel="stylesheet" href="./Tickets.css" type="text/css">
+    <!-- The links of icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+<link rel="manifest" href="./site.webmanifest">
+<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <h1>Buy Tickets</h1>
+    </header>
+    <div class="sec" id="sec1">
+        <h2>Dates</h2>
+        <form>
+            <label>Pick a date</label>
+            <input type="date" name="date" id="mydate" value="" min="">
+        </form>
+    </div>
+    <div id="guests" class="sec">
+        <h2>Guests</h2>
+        <form>
+            <label for="Sla">Sri Lankan Adult</label>
+            <input type="button" value="-" id="SAminus">
+            <span id="SA">0</span>
+            <input type="button" value="+" id="SAplus"><br><br>
+            <label for="Slc">Sri Lankan Child</label>
+            <input type="button" value="-" id="SCminus">
+            <span id="SC">0</span>
+            <input type="button" value="+" id="SCplus"><br><br>
+            <label for="Fa">Foreign Adult</label>
+            <input type="button" value="-" id="FAminus">
+            <span id="FA">1</span>
+            <input type="button" value="+" id="FAplus"><br><br>
+            <label for="Fc">Foreign Child</label>
+            <input type="button" value="-" id="FCminus">
+            <span id="FC">0</span>
+            <input type="button" value="+" id="FCplus"><br><br>
+            <label for="Inf">Infant</label>
+            <input type="button" value="-" id="Iminus">
+            <span id="SFI">0</span>
+            <input type="button" value="+" id="Iplus"><br><br>
+        </form>
+        <table>
+            <caption id="subcaption">Age Categories</caption>
+            <tr>
+                <th>Category</th>
+                <th>Age limit</th>
+            </tr>
+            <tr>
+                <td>Infant</td>
+                <td>below 4 years</td>
+            </tr>
+            <tr>
+                <td>Child</td>
+                <td>5 years - 14 years</td>
+            </tr>
+            <tr>
+                <td>Adult</td>
+                <td>above 15 years</td>
+            </tr>
+        </table>
+    </div>
+    <div class="sec" id="sec3">
+        <h2>Duration</h2>
+        <form>
+            <label for="duration">Select your time slot:</label>
+            <select name="time" id="time" multiple size="11" required>
+                <option value="7.5" selected id="7to8">7.00 am-8.00 am</option>
+                <option value="8.5" id="8to9">8.00 am-9.00 am</option>
+                <option value="9.5" id="peak">9.00 am-10.00 am</option>
+                <option value="10.5" id="peak">10.00 am-11.00 am</option>
+                <option value="11.5" id="peak">11.00 am-12.00 noon</option>
+                <option value="12.5" id="peak">12.00 noon-1.00 pm</option>
+                <option value="13.5">1.00 pm-2.00 pm</option>
+                <option value="14.5">2.00 pm-3.00 pm</option>
+                <option value="15.5" id="peak">3.00 pm-4.00 pm</option>
+                <option value="16.5" id="peak">4.00 pm-5.00 pm</option>
+                <option value="17.5" id="peak">5.00 pm-6.00 pm</option>
+            </select>
+        </form><br>
+        <table>
+            <caption id="subcaption">Charges per hour</caption>
+            <tr>
+                <th colspan="2">Type</th>
+                <th>Normal time</th>
+                <th id="peak">Peak time</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Foreign</th>
+                <th>Adult</th>
+                <td>10USD</td>
+                <td>13USD</td>
+            </tr>
+            <tr>
+                <th>Child</th>
+                <td>5USD</td>
+                <td>8USD</td>
+            </tr>
+            <tr>
+                <th rowspan="2">Sri Lankan</th>
+                <th>Adult</th>
+                <td>4USD</td>
+                <td>6USD</td>
+            </tr>
+            <tr>
+                <th>Child</th>
+                <td>2USD</td>
+                <td>3USD</td>
+            </tr>
+            <tr>
+                <th colspan="2">Infant</th>
+                <td colspan="2">Free of charge</td>
+            </tr>
+        </table>
+    </div>
+    <div id="sec4">
+        <h2>Summary</h2>
+        <form>
+           <table>
+            <tr>
+                <th>Date</th>
+                <td id="disdate"></td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td id="timeT">7.00 am - 8.00 am</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td id="duraT">1 hrs(01 Normal : 00 Peak)</td>
+            </tr>
+            <tr>
+                <th>Tickets</th>
+                <th>Charges($)</th>
+            </tr>
+            <!-- style="visibility: hidden;"  -->
+            <tr id="rowSAT">
+                <td id="SAT"> SriLankan Adult</td>
+                <td id="calSAT">-</td>
+            </tr>
+            <tr id="rowSCT">
+                <td id="SCT"> SriLankan Child</td>
+                <td id="calSCT">-</td>
+            </tr>
+            <tr id="rowFAT">
+                <td id="FAT">1 Foreign Adult</td>
+                <td id="calFAT">$10</td>
+            </tr>
+            <tr id="rowFCT">
+                <td id="FCT"> Foreign Child</td>
+                <td id="calFCT">-</td>
+            </tr>
+            <tr id="rowIT">
+                <td id="IT"> Infant</td>
+                <td id="calIT">free</td>
+            </tr>
+            <tr>
+                <th>Total Payable</th>
+                <th id="Ttotal">$10</th>
+            </tr>
+           </table>
+        </form>
+    </div>
+    <div id="sec5">
+        <br><br>
+        <a href="./Details.html"><input type="button" value="Continue with purchase" id="paybtndis" disabled></a><!-- in here the id should be paybtndis and add the disabled word too -->
+    </div>
+    <div id="sec6">
+        <a href="./Hikkaduwa.html">Back</a>
+    </div>
+    
+    <footer>
+    </footer>
+    <!-- link to the javascript -->
+    <script src="./Tickets.js"></script>
+</body>
+</html>

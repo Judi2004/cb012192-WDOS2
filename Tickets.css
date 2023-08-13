@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Bebas+Neue|Oswald|Caveat|Sora');
+/* variables */
+:root{
+    --maincolor:rgb(0, 153, 153);
+    --color2:rgb(204, 255, 255);
+    --bgcolor:rgb(230, 255, 255);
+    --redcolor: rgb(200, 0, 0);
+
+}
+body{
+    margin: 0%;
+    background-color:var(--bgcolor);  
+    display: grid;
+    grid-template-columns:60% 40%;
+    grid-template-rows: auto auto auto auto auto;
+    font-family:Sora;
+    font-size:110%;
+}
+header{
+    background-color: var(--maincolor);
+    font-family: "Lobster";
+    font-size: 125%;
+    color: white;
+    text-align: center;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    grid-area:1/1/2/3;
+
+}
+input[type=date]{
+    background-color: var(--maincolor);
+    padding: 2%;
+    border:2px solid var(--maincolor);
+    
+}
+#guests input[type=button]{
+    background-color: var(--maincolor);
+    padding:0.5% 1.5% 0.5% 1.5%;
+    font-weight: bold;
+    border: 1.5px solid black;
+}
+
+/* styling the main button */
+input[type=button]#paybtn{
+    border: 2% solid black;
+    border-radius:10px;
+    background-color: var(--maincolor);
+    color: white;
+    padding: 2%; 
+    font-size: 110%;
+}
+input[type=button]#paybtn:hover{
+    transform: translateY(4px);
+
+}
+/* when main button is disabled */
+#paybtndis{
+    border: 2% solid black;
+    border-radius:10px;
+    background-color: var(--bgcolor);
+    color: var(--maincolor);
+    padding: 2%; 
+    font-size: 110%;
+}
+#paybtndis{
+    transform: none;
+}
+
+.sec{
+    background-color:var(--color2);
+    background-image: url(./images/Untitled-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size: 25%;
+    background-position:right bottom;
+    padding:2% 0% 2% 5%;
+    margin:2%;
+    box-shadow:5px 6px 10px ;
+    border-radius: 15px;
+}
+#sec1{
+    grid-area:2/1/3/2;}
+#guests{
+    grid-area: 3/1/4/2;
+}
+#sec3{
+    grid-area: 4/1/6/2;
+}
+#sec4{
+    grid-area: 2/2/5/3;
+    text-align: center;
+    padding:10%;
+}
+#sec5{
+    grid-area:5/2/6/3 ;
+    text-align: center;
+    padding-bottom: 10%;
+}
+#sec6{
+    grid-area: 6/2/7/3;
+    text-align:right;
+    padding-right:5%;
+}
+#sec6 a{
+    color:var(--maincolor);
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: larger;
+}
+label{
+    display: inline-block;
+    width:23%;;
+}
+
+/* styling the tables */
+#sec4 table{
+    width:95%;
+}
+table th,td{
+    border: 2px solid var(--maincolor);
+}
+#sec3 table{
+    width: 70%;
+}
+div[id=sec3] table td{
+    background-color: var(--bgcolor);
+}
+div[id=sec3] table tr:hover{
+    background-color: var(--maincolor);
+}
+#subcaption{
+    font-weight:bolder;
+    color: var(--maincolor);
+}
+div[id=sec4] table th{
+    background-color: var(--maincolor);
+}
+#guests table th{
+    background-color: var(--maincolor);
+}
+#guests table{
+    padding-left:10%;
+    padding-bottom: 5%;
+    width:70%;
+    text-align: center;
+}
+#guests table tr:hover{
+    background-color: var(--bgcolor);
+}
+
+/* styling the select tag */
+div[id=sec3] select{
+   width: 80%;
+   background-color: var(--bgcolor);
+   border: 2px solid var(--maincolor);
+   overflow: hidden;
+}
+div[id=sec3] select option:hover{
+    background-color: var(--maincolor);
+}
+div[id=sec3] select option:checked{
+    background-color: var(--maincolor);
+}
+div[id=sec3] select option{
+    border: 1px solid var(--color2);
+}
+#peak{
+    color: var(--redcolor);
+    font-weight: bold;
+}
+footer{
+    grid-area: 7/1/8/3;
+    background-color: var(--maincolor);
+    background-image: url(./images/Untitled__1_-removebg-preview.png);
+    background-size: 10%;
+    padding-top:8%;
+}
+
+
+/* div{
+    border: 5px solid black;
+} */
+
+@media screen and (max-width:700px){
+    body{  
+        /* display: grid; */
+        grid-template-columns:100%;
+        grid-template-rows: auto auto auto auto;
+    }
+    header{
+        grid-area:1/1/2/3;
+    
+    }
+    #sec1{
+        grid-area:2/1/3/3;}
+    #guests{
+        grid-area: 3/1/4/3;
+    }
+    #sec3{
+        grid-area: 4/1/5/3;
+    }
+    #sec5{
+        grid-area:5/1/6/3;
+        padding-bottom:0%;
+    }
+    #sec4{
+        grid-area: 6/1/7/3;
+    }
+    
+    footer{
+        grid-area: 7/1/8/3;
+    }
+}
